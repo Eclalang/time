@@ -25,6 +25,14 @@ func TestNow(t *testing.T) {
 	}
 }
 
+func TestConvertRoman(t *testing.T) {
+	actual := PackageTime.ConvertRoman("1999")
+	expected := "MCMXCIX"
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
 func TestSleep(t *testing.T) {
 	PackageTime.Sleep(2)
 }
