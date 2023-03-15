@@ -1,7 +1,6 @@
 package timelibtest
 
 import (
-	"fmt"
 	PackageTime "github.com/Eclalang/time"
 	"testing"
 	"time"
@@ -31,11 +30,10 @@ func TestSleep(t *testing.T) {
 }
 
 func TestStrftime(t *testing.T) {
-	format := time.RFC822
-	date := "2003-06-09"
+	date := PackageTime.Date(2003, 6, 9, 14, 21, 42)
+	format := "Current time : %d/%m/%Y %H:%M:%S"
 	actual := PackageTime.Strftime(format, date)
-	expected := time.Date(2003, 6, 9, 14, 21, 42, 0, time.UTC).String()
-	fmt.Println(actual)
+	expected := "Current time : 09/06/2003 14:21:42"
 	if actual != expected {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}

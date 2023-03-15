@@ -1,6 +1,7 @@
 package time
 
 import (
+	"strings"
 	"time"
 )
 
@@ -19,11 +20,37 @@ func Sleep(sec int) {
 	time.Sleep(time.Duration(sec) * time.Second)
 }
 
-// TODO : DOES NOT WORK
+// Strftime returns a string representation of a date according to a specified format
 func Strftime(format, date string) string {
-	t, _ := time.Parse(time.RFC822, date)
-	help := t.Format(format)
-	return help
+	result := ""
+	for index := 0; index < len(format); index = 0 {
+		i := strings.Index(format, "%")
+		if i == -1 {
+			break
+		}
+		result += format[:i]
+
+		switch format[i+1] {
+		case 'd':
+			result += date[8:10]
+		case 'm':
+			result += date[5:7]
+		case 'Y':
+			result += date[:4]
+		case 'y':
+			result += date[2:4]
+		case 'H':
+			result += date[11:13]
+		case 'M':
+			result += date[14:16]
+		case 'S':
+			result += date[17:19]
+		case '%':
+			result += "%"
+		}
+		format = format[i+2:]
+	}
+	return result
 }
 
 // Timer waits for a specified number of seconds
