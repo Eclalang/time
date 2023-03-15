@@ -1,0 +1,46 @@
+package timelibtest
+
+import (
+	"fmt"
+	PackageTime "github.com/Eclalang/time"
+	"testing"
+	"time"
+)
+
+func TestDate(t *testing.T) {
+	year, month, day, hour, min, sec := 2003, 6, 9, 14, 21, 42
+	actual := PackageTime.Date(year, month, day, hour, min, sec)
+	expected := time.Date(year, time.Month(month), day, hour, min, sec, 0, time.UTC).String()
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestNow(t *testing.T) {
+	actual := PackageTime.Now()
+	expected := time.Now().String()
+	actual = actual[0:19]
+	expected = expected[0:19]
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestSleep(t *testing.T) {
+	PackageTime.Sleep(2)
+}
+
+func TestStrftime(t *testing.T) {
+	format := time.RFC822
+	date := "2003-06-09"
+	actual := PackageTime.Strftime(format, date)
+	expected := time.Date(2003, 6, 9, 14, 21, 42, 0, time.UTC).String()
+	fmt.Println(actual)
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+}
+
+func TestTimer(t *testing.T) {
+	PackageTime.Timer(2)
+}
