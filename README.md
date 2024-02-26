@@ -1,6 +1,6 @@
-## TIME LIBRARY FOR ECLA
+# Time library
 
-# Candidate functions :
+## Candidate functions :
 
 |   Func Name   |                      Prototype                       |                                Description                                | Comments |
 |:-------------:|:----------------------------------------------------:|:-------------------------------------------------------------------------:|:--------:|
@@ -11,7 +11,7 @@
 |   Strftime    |       Strftime(format, date string) string {}        | Returns a string representation of a date according to a specified format |   N/A    |
 |     Timer     |                  Timer(sec int) {}                   |                  Waits for a specified number of seconds                  |   N/A    |
 
-# Supported Conversion Formats :
+## Supported Conversion Formats :
 | Pattern |                   Description                    |
 |:-------:|:------------------------------------------------:|
 |   %d    |   Day of the month as a decimal number (01-31)   |
