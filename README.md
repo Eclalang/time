@@ -1,5 +1,9 @@
 # Time library
 
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/Eclalang/time)](https://goreportcard.com/report/github.com/Eclalang/time)
+[![codecov](https://codecov.io/gh/Eclalang/time/graph/badge.svg?token=YNCIYERVBO)](https://codecov.io/gh/Eclalang/time)
+
 ## Candidate functions :
 
 |   Func Name   |                      Prototype                       |                                Description                                | Comments |
