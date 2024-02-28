@@ -30,6 +30,24 @@ func TestConvertRoman(t *testing.T) {
 	if actual != expected {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
+
+	actual = ConvertRoman("658")
+	expected = "DCLVIII"
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+
+	actual = ConvertRoman("444")
+	expected = "CDXLIV"
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+
+	actual = ConvertRoman("10")
+	expected = "X"
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
 }
 
 func TestSleep(t *testing.T) {
@@ -41,6 +59,20 @@ func TestStrftime(t *testing.T) {
 	format := "Current time : %d/%m/%Y %H:%M:%S"
 	actual := Strftime(format, date)
 	expected := "Current time : 09/06/2003 14:21:42"
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+
+	format = "Current time : "
+	actual = Strftime(format, date)
+	expected = "Current time : "
+	if actual != expected {
+		t.Errorf("Expected %s, got %s", expected, actual)
+	}
+
+	format = "Current time : %y %%"
+	actual = Strftime(format, date)
+	expected = "Current time : 03 %"
 	if actual != expected {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}

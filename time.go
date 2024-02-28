@@ -76,7 +76,7 @@ func Strftime(format, date string) string {
 	for index := 0; index < len(format); index = 0 {
 		i := strings.Index(format, "%")
 		if i == -1 {
-			break
+			return format
 		}
 		result += format[:i]
 
