@@ -66,7 +66,7 @@ func ConvertRoman(str string) string {
 }
 
 // Sleep pauses the current goroutine for a specified number of seconds
-func Sleep[T int | float32](sec T) {
+func Sleep[T int | float64](sec T) {
 	time.Sleep(time.Duration(sec) * time.Second)
 }
 
