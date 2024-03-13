@@ -66,7 +66,7 @@ func ConvertRoman(str string) string {
 }
 
 // Sleep pauses the current goroutine for a specified number of seconds
-func Sleep(sec int) {
+func Sleep[T int | float32](sec T) {
 	time.Sleep(time.Duration(sec) * time.Second)
 }
 
@@ -101,10 +101,4 @@ func Strftime(format, date string) string {
 		format = format[i+2:]
 	}
 	return result
-}
-
-// Timer waits for a specified number of seconds
-func Timer(sec int) {
-	t := time.NewTimer(time.Duration(sec) * time.Second)
-	<-t.C
 }

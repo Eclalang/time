@@ -52,6 +52,7 @@ func TestConvertRoman(t *testing.T) {
 
 func TestSleep(t *testing.T) {
 	Sleep(2)
+	Sleep(float32(0.5))
 }
 
 func TestStrftime(t *testing.T) {
@@ -76,8 +77,4 @@ func TestStrftime(t *testing.T) {
 	if actual != expected {
 		t.Errorf("Expected %s, got %s", expected, actual)
 	}
-}
-
-func TestTimer(t *testing.T) {
-	Timer(2)
 }
