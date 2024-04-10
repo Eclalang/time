@@ -65,9 +65,9 @@ func ConvertRoman(str string) string {
 	return result
 }
 
-// Sleep pauses the current goroutine for a specified number of seconds
-func Sleep[T int | float64](sec T) {
-	time.Sleep(time.Duration(sec) * time.Second)
+// Sleep pauses the current goroutine for a specified number of milliseconds
+func Sleep[T int | float64](ms T) {
+	time.Sleep(time.Duration(ms) * time.Millisecond)
 }
 
 // Strftime returns a string representation of a date according to a specified format
