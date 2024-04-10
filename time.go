@@ -1,10 +1,17 @@
 package time
 
 import (
+	"github.com/Eclalang/Ecla/interpreter/eclaType"
 	"strconv"
 	"strings"
 	"time"
 )
+
+var Variables = map[string]eclaType.Type{
+	"SECONDS": eclaType.Int(1000),
+	"MINUTES": eclaType.Int(60000),
+	"HOURS":   eclaType.Int(3600000),
+}
 
 // Date returns a string representation of a date
 func Date(year, month, day, hour, min, sec int) string {
