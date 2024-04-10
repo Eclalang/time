@@ -11,7 +11,7 @@
 | ConvertRoman  |          ConvertRoman(str string) string {}          |                    Converts a number to a roman number                    |   N/A    |
 |     Date      | Date(year, month, day, hour, min, sec int) string {} |                 Returns a string representation of a date                 | UTC Time |
 |      Now      |                   Now() string {}                    |            Returns a string representation of the current time            |   N/A    |
-|     Sleep     |             Sleep(sec int \| float64) {}             |      Pauses the current goroutine for a specified number of seconds       |   N/A    |
+|     Sleep     |             Sleep(ms int \| float64) {}              |    Pauses the current goroutine for a specified number of milliseconds    |   N/A    |
 |   Strftime    |       Strftime(format, date string) string {}        | Returns a string representation of a date according to a specified format |   N/A    |
 
 ## Supported Conversion Formats :
@@ -25,3 +25,10 @@
 |   %Y    |                Year with century                 |
 |   %y    |           Year without century (00-99)           |
 |   %%    |                    A '%' sign                    |
+
+## Constants variables :
+|  Name   | Type |  Value   |
+|:-------:|:----:|:--------:|
+| SECONDS | int  |   1000   |
+| MINUTES | int  |  60000   |
+|  HOURS  | int  | 3600000  |
